@@ -17,7 +17,7 @@
 #define MAX_ROTATION (PI/6)
 
 // calibration settings storage
-#define EEPROM_VERSION 0 // 0 to calibrate every time, 1 to load from EEPROM
+#define EEPROM_VERSION 1 // 0 to calibrate every time, 1 to load from EEPROM
 #define MAX_CYCLES 1    // how many cycles before recalibrating
 
 #define ADDR_VERSION  0                    // 1 byte, eeprom version

@@ -75,6 +75,17 @@ void saveConfig(Platform &platform) {
     EEPROM.put(ADDR_CALIB_C2, c2);
 
     Serial.print("a1[0]: "); Serial.println(a1[0]);
+    Serial.print("a1[1]: "); Serial.println(a1[1]);
+    Serial.print("a2[0]: "); Serial.println(a2[0]);
+    Serial.print("a2[1]: "); Serial.println(a2[1]);
+    Serial.print("b1[0]: "); Serial.println(b1[0]);
+    Serial.print("b1[1]: "); Serial.println(b1[1]);
+    Serial.print("b2[0]: "); Serial.println(b2[0]);
+    Serial.print("b2[1]: "); Serial.println(b2[1]);
+    Serial.print("c1[0]: "); Serial.println(c1[0]);
+    Serial.print("c1[1]: "); Serial.println(c1[1]);
+    Serial.print("c2[0]: "); Serial.println(c2[0]);
+    Serial.print("c2[1]: "); Serial.println(c2[1]);
 }
 
 void loadConfig(Platform &platform) {

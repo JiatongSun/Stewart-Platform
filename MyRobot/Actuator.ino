@@ -163,26 +163,26 @@ void Actuator::setPWM() {
 }
 
 void Actuator::calibrate() {
-    Serial.println("custom actuator calibration!");
-    Serial.print("actuator calibration stage: ");
-    Serial.println(calibrationStage);
+    // Serial.println("standard actuator calibration!");
+    // Serial.print("actuator calibration stage: ");
+    // Serial.println(calibrationStage);
     switch (calibrationStage) {
         case 0:
         case 7: extend();
-                Serial.println("fast extending!");
+                // Serial.println("fast extending!");
                 break;
 
         case 3: extend(255 * CALIB_SPEED_RATIO);
-                Serial.println("slow extending!");
+                // Serial.println("slow extending!");
                 break;
 
         case 2:
         case 5: retract();
-                Serial.println("fast retracting!");
+                // Serial.println("fast retracting!");
                 break;
 
         case 8: retract(255 * CALIB_SPEED_RATIO);
-                Serial.println("slow retracting!");
+                // Serial.println("slow retracting!");
                 break;
 
         case 1:
@@ -190,7 +190,7 @@ void Actuator::calibrate() {
         case 6:
         case 9: for(int i = 0; i < SMOOTH; i++)
                     readPosition();
-                    Serial.println("reading position...");
+                    // Serial.println("reading position...");
                 brake();
                 break;
 
@@ -199,19 +199,19 @@ void Actuator::calibrate() {
 
     switch (calibrationStage) {
         case 1: minPosition = filtPosition;
-                Serial.println("Updating minimum position...");
+                // Serial.println("Updating minimum position...");
                 break;
 
         case 4: minPosition = max(minPosition, filtPosition);
-                Serial.println("Updating minimum position...");
+                // Serial.println("Updating minimum position...");
                 break;
 
         case 6: maxPosition = filtPosition;
-                Serial.println("Updating minimum position...");
+                // Serial.println("Updating minimum position...");
                 break;
 
         case 9: maxPosition = min(maxPosition, filtPosition);
-                Serial.println("Updating minimum position...");
+                // Serial.println("Updating minimum position...");
                 break;
 
         default: break;
@@ -225,7 +225,7 @@ void Actuator::calibrate() {
 }
 
 void Actuator::calibrate(uint16_t (&settings)[2]) {
-    Serial.println("custom actuator calibration!");
+    // Serial.println("custom actuator calibration!");
     maxPosition = max(settings[0], settings[1]);
     minPosition = min(settings[0], settings[1]);
     isCalibrated = true;

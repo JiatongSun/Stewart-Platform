@@ -51,7 +51,7 @@ void Platform::calibrate() {
     Serial.println("standard platform calibration!");
     for (int stage = 0; stage <= NUM_CALIB_STAGES; stage++) {
         Serial.print("calibration stage: ");
-        Serial.print(stage);
+        Serial.println(stage);
         for (int i = 0; i < NUM_ACTUATORS; i++) {
             actuators[i].calibrate();
             // Serial.print("actuator ");
@@ -61,18 +61,18 @@ void Platform::calibrate() {
 
         switch (stage) {
             case 0:
-            case 5: delay(ACTUATOR_STROKE_LENGTH / SPEED * 1000 + EXTRA_SECONDS * 1000); // wait for actuators to fully extend/retract
-                    Serial.println("delay...");
+            case 5: Serial.println("first delay...");
+                    delay(ACTUATOR_STROKE_LENGTH / SPEED * 1000 + EXTRA_SECONDS * 1000); // wait for actuators to fully extend/retract
                     break;
 
             case 2:
-            case 7: delay(SECOND_PROBE_LENGTH * ACTUATOR_STROKE_LENGTH / SPEED * 1000); // wait for actuators to extend/retract to prepare second check
-                    Serial.println("delay...");
+            case 7: Serial.println("second delay...");
+                    delay(SECOND_PROBE_LENGTH * ACTUATOR_STROKE_LENGTH / SPEED * 1000); // wait for actuators to extend/retract to prepare second check
                     break;
 
             case 3:
-            case 8: delay(SECOND_PROBE_LENGTH * ACTUATOR_STROKE_LENGTH / (SPEED * CALIB_SPEED_RATIO) * 1000 + EXTRA_SECONDS * 1000); // wait for actuators to extend/retract to make second check
-                    Serial.println("delay...");
+            case 8: Serial.println("third delay...");
+                    delay(SECOND_PROBE_LENGTH * ACTUATOR_STROKE_LENGTH / (SPEED * CALIB_SPEED_RATIO) * 1000 + EXTRA_SECONDS * 1000); // wait for actuators to extend/retract to make second check
                     break;
 
             default: break;
