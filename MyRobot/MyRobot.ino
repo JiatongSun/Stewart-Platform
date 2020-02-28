@@ -31,15 +31,15 @@ void setup() {
     pinMode(SHDN_BTN, INPUT_PULLUP);
 
     platform.setup();
-    // platform.setLoopDuration(travelTime);
-    // platform.setActuatorMovements(actuatorMovements);
+    platform.setLoopDuration(travelTime);
+    platform.setActuatorMovements(actuatorMovements);
 }
 
 void loop() {
-    // if(digitalRead(SHDN_BTN) == LOW) {
-    //     platform.retract();
-    // }
-    // else {
-    //     platform.loop();
-    // }
+    if(digitalRead(SHDN_BTN) == LOW) {
+        platform.retract();
+    }
+    else {
+        platform.loop();
+    }
 }

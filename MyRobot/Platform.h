@@ -71,6 +71,8 @@ class Platform {
         unsigned long duration;
         unsigned long t_start;
         unsigned long t_end;
+
+        void noCalibrate();
 };
 
 #endif

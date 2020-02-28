@@ -126,4 +126,23 @@
 #define C2_PLAT_X  -6.93
 #define C2_PLAT_Y   9.00
 
+// platform maxPosition and minPosition default CONFIGURATION_H
+#define A1_MIN  98
+#define A1_MAX  1020
+
+#define A2_MIN  104
+#define A2_MAX  1023
+
+#define B1_MIN  94
+#define B1_MAX  1015
+
+#define B2_MIN  97
+#define B2_MAX  1018
+
+#define C1_MIN  104
+#define C1_MAX  1019
+
+#define C2_MIN  99
+#define C2_MAX  1021
+
 #endif

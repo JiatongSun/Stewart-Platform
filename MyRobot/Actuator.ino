@@ -82,8 +82,8 @@ void Actuator::setInitialHeight() {
     readPosition();
     // Serial.print("minPosition:"); Serial.println(minPosition);
     // Serial.print("maxPosition:"); Serial.println(maxPosition);
-    // Serial.print("targetPosition:"); Serial.println(targetPosition);
-    // Serial.print("filtPosition:"); Serial.println(filtPosition);
+     Serial.print("targetPosition:"); Serial.println(targetPosition);
+     Serial.print("filtPosition:"); Serial.println(filtPosition);
 
     if (!isSet) {
         if (filtPosition <= targetPosition + TOLERANCE && filtPosition >= targetPosition - TOLERANCE) {
@@ -271,4 +271,11 @@ int Actuator::getMaxPosition() {
 
 int Actuator::getMinPosition() {
     return minPosition;
+}
+
+void Actuator::noCalibrate(int min_config, int max_config){
+    minPosition = min_config;
+    maxPosition = max_config;
+    isCalibrated = true;
+    isReady = true;
 }

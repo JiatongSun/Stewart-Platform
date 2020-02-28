@@ -66,6 +66,8 @@ class Actuator {
         int getPosition();
         int getMaxPosition();
         int getMinPosition();
+
+        void noCalibrate(int min_config, int max_config);
 };
 
 #endif

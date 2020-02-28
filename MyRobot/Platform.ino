@@ -17,7 +17,9 @@ void Platform::setup() {
         actuators[i].setup();
     }
     initialHeight.Set(0, 0, INITIAL_HEIGHT);
-    loadConfig(*this);
+//     loadConfig(*this);
+    noCalibrate();
+
 
     Serial.println("finish platform setup");
 }
@@ -31,7 +33,7 @@ void Platform::loop() {
       }
     }
     else if (isPlatformReady()) { // if platform has reached the end of the movement loop then restart the loop
-        Serial.println("end of platform loop");
+//        Serial.println("end of platform loop");
 
         t_start = millis();
         t_end = t_start + duration;
@@ -86,9 +88,6 @@ void Platform::calibrate(uint16_t (&settings)[NUM_ACTUATORS][2]) {
     Serial.println("custom platform calibration!");
     for (int i = 0; i < NUM_ACTUATORS; i++) {
         actuators[i].calibrate(settings[i]);
-        // Serial.print("actuator ");
-        // Serial.print(i+1);
-        // Serial.println(" is calibating...");
     }
     isCalibrated = true;
     isReady = true;
@@ -180,4 +179,15 @@ bool Platform::isPlatformSet() {
         isSet = isSet && actuators[i].isActuatorSet();
     }
     return isSet;
+}
+
+void Platform::noCalibrate(){
+    actuators[0].noCalibrate(A1_MIN,A1_MAX);
+    actuators[1].noCalibrate(A2_MIN,A2_MAX);
+    actuators[2].noCalibrate(B1_MIN,B1_MAX);
+    actuators[3].noCalibrate(B2_MIN,B2_MAX);
+    actuators[4].noCalibrate(C1_MIN,C1_MAX);
+    actuators[5].noCalibrate(C2_MIN,C2_MAX);
+    isCalibrated = true;
+    isReady = true;
 }
