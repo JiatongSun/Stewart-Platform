@@ -113,7 +113,7 @@ void loadConfig(Platform &platform) {
         cycles = EEPROM.read(ADDR_CYCLES);
         Serial.print("cycles: ");
         Serial.println(cycles);
-        if (cycles == 0) {
+        if (cycles == 2) {
             platform.calibrate();
             saveConfig(platform);
         }
