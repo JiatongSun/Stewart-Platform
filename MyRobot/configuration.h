@@ -128,10 +128,10 @@
 
 // platform maxPosition and minPosition default CONFIGURATION_H
 #define A1_MIN  98
-#define A1_MAX  1020
+#define A1_MAX  1019
 
-#define A2_MIN  104
-#define A2_MAX  1023
+#define A2_MIN  103
+#define A2_MAX  1020
 
 #define B1_MIN  94
 #define B1_MAX  1015
@@ -139,10 +139,10 @@
 #define B2_MIN  97
 #define B2_MAX  1018
 
-#define C1_MIN  104
-#define C1_MAX  1019
+#define C1_MIN  103
+#define C1_MAX  1018
 
 #define C2_MIN  99
-#define C2_MAX  1021
+#define C2_MAX  1019
 
 #endif

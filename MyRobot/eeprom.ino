@@ -1,4 +1,5 @@
 #include <EEPROM.h>
+#include "eeprom.h"
 #include "configuration.h"
 #include "Platform.h"
 
