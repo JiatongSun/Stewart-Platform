@@ -1,4 +1,4 @@
-function dist = parabolic_integral(t_start, t_end)
+function dist = parabolicIntegral(t_start, t_end)
     syms t
     h = (t_start + t_end) / 2;
     t_tot = t_end - t_start;
