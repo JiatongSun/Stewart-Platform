@@ -47,7 +47,7 @@ class Actuator {
 
         void setup();
         void loop();
-        void setInitialHeight();
+        void setInitialHeight(float initialHeight);
 
         void calibrate();
         void calibrate(uint16_t (&settings)[2]);

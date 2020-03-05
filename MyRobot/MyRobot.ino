@@ -23,6 +23,7 @@ int actuatorMovements[6][NUM_MAX_SWITCHES] = {
     {7, 21, 28}
 };
 
+float actuatorInitialHeights[6] = {0.11, 0.4, 0.11, 0.4, 0.11, 0.4};
 // int actuatorMovements[6][NUM_MAX_SWITCHES] = {
 //     {0, 6, 21},
 //     {0, 6, 21},
@@ -49,6 +50,6 @@ void loop() {
         platform.retract();
     }
     else {
-        platform.loop();
+        platform.loop(actuatorInitialHeights);
     }
 }

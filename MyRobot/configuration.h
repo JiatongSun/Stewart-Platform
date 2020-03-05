@@ -36,7 +36,7 @@
 // other constants
 #define NUM_ACTUATORS 6
 #define NUM_CALIB_STAGES 9
-#define RELATIVE_START_HEIGHT 0.25 // the amount of time it takes to get to the desired initial height of actuators at start
+//#define RELATIVE_START_HEIGHT 0.25 // the amount of time it takes to get to the desired initial height of actuators at start
 
 #define NUM_MAX_SWITCHES 3 // constant for maximum switches an actuator goes through, for now this is the same for all
                            // actuators but in the future we may figure out how to fill the 2D array to ensure each

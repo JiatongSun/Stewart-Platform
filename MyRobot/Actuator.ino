@@ -77,8 +77,9 @@ void Actuator::setup() {
     off();
 }
 
-void Actuator::setInitialHeight() {
-    targetPosition = minPosition + (maxPosition - minPosition) * RELATIVE_START_HEIGHT;
+void Actuator::setInitialHeight(float initialHeight) {
+    //targetPosition = minPosition + (maxPosition - minPosition) * RELATIVE_START_HEIGHT;
+    targetPosition = minPosition + (maxPosition - minPosition) * initialHeight;
     readPosition();
     // Serial.print("minPosition:"); Serial.println(minPosition);
     // Serial.print("maxPosition:"); Serial.println(maxPosition);

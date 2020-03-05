@@ -50,7 +50,7 @@ class Platform {
         Platform();
 
         void setup();
-        void loop();
+        void loop(float actuatorInitialHeights[6]);
 
         void calibrate();
         void calibrate(uint16_t (&settings)[NUM_ACTUATORS][2]);
@@ -58,6 +58,7 @@ class Platform {
 
         void setLoopDuration(int travelTime);
         bool setActuatorMovements(int actuatorMovements[6][NUM_MAX_SWITCHES]);
+        bool setInitialHeights(float actuatorInitialHeights[6]);
 
         int getActuatorRawPosition(int actuator);
         int getActuatorPosition(int actuator);

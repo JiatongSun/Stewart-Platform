@@ -24,13 +24,19 @@ void Platform::setup() {
     Serial.println("finish platform setup");
 }
 
-void Platform::loop() {
+void Platform::loop(float actuatorInitialHeights[6]) {
+    // if (!isPlatformSet()) { // if platform hasn't been set at the starting height
+    //     Serial.println("setting initial height");
+    //     for (int i = 0; i < NUM_ACTUATORS; i++) {
+    //       // set height for actuators
+    //       actuators[i].setInitialHeight();
+    //   }
+    // }
     if (!isPlatformSet()) { // if platform hasn't been set at the starting height
-        Serial.println("setting initial height");
-        for (int i = 0; i < NUM_ACTUATORS; i++) {
-          // set height for actuators
-          actuators[i].setInitialHeight();
-      }
+        Serial.println("setting initial heights");
+        for (int i = 0; i < NUM_ACTUATORS; i++){
+            actuators[i].setInitialHeight(actuatorInitialHeights[i]);
+          }
     }
     else if (isPlatformReady()) { // if platform has reached the end of the movement loop then restart the loop
 //        Serial.println("end of platform loop");
@@ -108,6 +114,13 @@ bool Platform::setActuatorMovements(int actuatorMovements[6][NUM_MAX_SWITCHES]) 
     Serial.println("setting actuator movements");
     for (int i = 0; i < NUM_ACTUATORS; i++){
       actuators[i].setMovements(actuatorMovements[i]);
+    }
+}
+
+bool Platform::setInitialHeights(float actuatorInitialHeights[6]){
+    Serial.println("setting initial heights");
+    for (int i = 0; i < NUM_ACTUATORS; i++){
+      actuators[i].setInitialHeight(actuatorInitialHeights[i]);
     }
 }
 
