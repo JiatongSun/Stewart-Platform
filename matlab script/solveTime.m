@@ -1,5 +1,6 @@
 function t_span = solveTime(varargin)
     syms t t0
+%     pwm = 245 - 230 * (t-t0/2)^2 / (t0/2)^2;
     pwm = 245 - 230 * (t-t0/2)^2 / (t0/2)^2;
     distance = int(pwm,t,0,t0);
     t_span = zeros(1,nargin);
