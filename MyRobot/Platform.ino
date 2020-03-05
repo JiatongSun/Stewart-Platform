@@ -17,8 +17,8 @@ void Platform::setup() {
         actuators[i].setup();
     }
     initialHeight.Set(0, 0, INITIAL_HEIGHT);
-    loadConfig(*this);
-//    noCalibrate();
+    // loadConfig(*this);
+    noCalibrate();
 
 
     Serial.println("finish platform setup");

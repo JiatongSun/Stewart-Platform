@@ -12,7 +12,7 @@
 #include "eeprom.h"
 
 // amount of time to loop through
-int travelTime = 26;
+int travelTime = 28;
 // controls and switches extend/retract for each actuator based on time, starts on extend
 int actuatorMovements[6][NUM_MAX_SWITCHES] = {
     {7, 21, 28},   // extend first
