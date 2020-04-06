@@ -24,6 +24,7 @@ int actuatorMovements[6][NUM_MAX_SWITCHES] = {
 };
 
 float actuatorInitialHeights[6] = {0.58, 0.16, 0.49, 0.49, 0.16, 0.58};
+float actuatorMaxPWMs[6] = {245, 245, 245, 245, 245, 245};
 // int actuatorMovements[6][NUM_MAX_SWITCHES] = {
 //     {0, 6, 21},
 //     {0, 6, 21},
@@ -50,6 +51,6 @@ void loop() {
         platform.retract();
     }
     else {
-        platform.loop(actuatorInitialHeights);
+        platform.loop(actuatorInitialHeights, actuatorMaxPWMs);
     }
 }
